@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: pixeyato-gen-ai-api
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: PIXEYATO_API_KEY
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: MAX_UPLOAD_MB
+        value: "12"
